@@ -1,0 +1,30 @@
+body{
+    margin:50px;
+    background-image:url('../img/home.jpg');
+    background-repeat:no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+
+table {
+font-family: arial, sans-serif;
+border-collapse: collapse;
+width: 100%;
+
+}
+
+td, th {
+border: 1px solid #dddddd;
+text-align: left;
+padding: 8px;
+}
+
+tr:nth-child(even){
+  background-color: rgb(248, 194, 150);
+  color:black;
+}
+
+tr:nth-child(odd){
+background-color: white;
+color:black;
+}

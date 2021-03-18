@@ -1,0 +1,38 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Customers</title>
+    <link  rel="stylesheet" type='text/css' href="{%static 'css/customertab.css'%}"/>
+</head>
+<body>
+<a href="{% url 'home'%}">
+  <img src="{%static 'img/2.png'%}" alt="HTML tutorial" style="width:40px;height:40px;">
+</a> 
+    <h1 style="color:black">List of All Customers</h1>
+    <table>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Current Balance</th>
+          <th>View Customer</th>
+        </tr>
+        {%for cobj in customers%}
+        <tr>
+            
+          <td>{{cobj.name}}</td>
+          <td>{{cobj.email}}</td>
+          <td>{{cobj.currentbal}}</td>
+          <td>
+            <form method="GET" action="profile">
+            <input type="hidden" name="id" value="{{ cobj.id }}">
+           <button class="b1" type="submit">Click</button>
+          </td>
+        </form> 
+        </tr>
+        {% endfor %}
+</body>
+</html>

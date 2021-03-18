@@ -1,0 +1,28 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+    <link  rel="stylesheet" type='text/css' href="{%static 'css/profile.css'%}"/>
+    <title> Customer profile</title>
+</head>
+<body>
+
+<h2 style="text-align:center;color:white">welcome {{cobj.name}}</h2>
+
+<div class="card">
+    <br/>
+  <div class="a">
+   <h1> {{cobj.name}}</h1>
+  </div>
+  <p class="title">Email : {{cobj.email}}</p>
+  <p>Available Balance : Rs.<b>{{cobj.currentbal}}</b></p>
+  <form method="GET" action="transfermoney">
+    <input type="hidden" name="id" value="{{ cobj.id }}">
+   <button type="submit">Transfer Money</button>
+  </form>
+</div>
+{%for message in messages%}
+  <h1 style="text-align:center;color:rgb(8, 8, 8);">{{message}}</h1>
+  {%endfor%}
+</body>
+</html>

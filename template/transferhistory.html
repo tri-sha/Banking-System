@@ -1,0 +1,33 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Customers</title>
+    <link  rel="stylesheet" type='text/css' href="{%static 'css/transferhistory.css'%}"/>
+</head>
+<body>
+    <h1 style="color:white">Transfer History</h1>
+    <table>
+        <tr>
+          <th>Sender</th>
+          <th>Receiver</th>
+          <th>Amount</th>
+          <th>Date/Time</th>
+        </tr>
+        {% for tobjs in tobj %}
+        <tr>   
+          <td>{{tobjs.sender}}</td>
+          <td>{{tobjs.receiver}}</td>
+          <td>{{tobjs.amount}}</td>
+
+          <td>
+            {{ tobjs.transactiontime|date:"D d M Y" }} {{ tobjs.transactiontime|time:"H:i" }}
+            </td>
+        </tr>
+        {% endfor %}
+     </table>   
+</body>
+</html>
